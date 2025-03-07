@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main class="container" style="margin-top:100px;">
+    <h1>Learn & Recognize Scams</h1>
+    <section id="overview">
+      <h2>Overview</h2>
+      <p>Cybercriminals use psychological tricks—urgency, impersonation, and fear—to steal your personal data and money. Stay informed to keep your digital life secure.</p>
+    </section>
+
+    <section id="phishing">
+      <h2>Phishing (Email Scams)</h2>
+      <p>Fake emails that mimic trusted companies to steal login info or install malware.</p>
+      <ul>
+        <li><strong>Urgency:</strong> “Your account is locked – act now!”</li>
+        <li><strong>Impersonation:</strong> Logos and sender details that look real.</li>
+        <li><strong>Malicious Attachments:</strong> Files that install malware when opened.</li>
+      </ul>
+      <p>Always verify directly with the source before clicking any links.</p>
+    </section>
+
+    <section id="smishing">
+      <h2>Smishing (SMS Scams)</h2>
+      <p>Fraudulent text messages designed to lure you into clicking harmful links.</p>
+      <ul>
+        <li><strong>Delivery Alerts:</strong> “Your package is delayed – reschedule now!”</li>
+        <li><strong>Bank Warnings:</strong> “Suspicious login detected – verify immediately.”</li>
+        <li><strong>Prize Notifications:</strong> “You’ve won a gift card! Claim it here.”</li>
+      </ul>
+      <p>Be wary of texts from unknown numbers urging instant action.</p>
+    </section>
+
+    <section id="vishing">
+      <h2>Vishing (Phone Scams)</h2>
+      <p>Phone calls pretending to be from banks, government, or tech support.</p>
+      <ul>
+        <li><strong>Caller ID Spoofing:</strong> Calls that appear to be from legitimate sources.</li>
+        <li><strong>Fear Tactics:</strong> Claims of compromised accounts or legal trouble.</li>
+        <li><strong>Unusual Payment Methods:</strong> Requests for gift cards or crypto.</li>
+      </ul>
+      <p>Never share sensitive details during unsolicited calls. Verify independently.</p>
+    </section>
+
+    <section id="social-media">
+      <h2>Social Media Scams</h2>
+      <p>Fake profiles and posts aiming to scam you via giveaways, romance, or investments.</p>
+      <ul>
+        <li><strong>Fake Giveaways:</strong> Promises of expensive prizes that require personal info.</li>
+        <li><strong>Romance Scams:</strong> Long-term deceit to build trust and then ask for money.</li>
+        <li><strong>Investment Scams:</strong> Offers of high returns that vanish once you invest.</li>
+      </ul>
+      <p>Double-check profiles and offers using official channels.</p>
+    </section>
+
+    <section id="marketplace">
+      <h2>Marketplace & Job Scams</h2>
+      <p>Fraudulent listings and job offers on online marketplaces and boards.</p>
+      <ul>
+        <li><strong>Fake Listings:</strong> Unbelievable deals that never deliver.</li>
+        <li><strong>Job Scams:</strong> Offers that require upfront fees for “training.”</li>
+        <li><strong>Overpayment Tricks:</strong> Buyers “accidentally” send extra funds.</li>
+      </ul>
+      <p>Always be cautious of deals that seem too good to be true.</p>
+    </section>
+
+    <section id="scammer-tactics">
+      <h2>How Scammers Operate & Red Flags</h2>
+      <p>Scammers use authority, urgency, and social proof to mislead you. Watch out for:</p>
+      <ul>
+        <li>Unexpected requests for sensitive data</li>
+        <li>Messages demanding instant action</li>
+        <li>Links or attachments from unknown sources</li>
+      </ul>
+      <p>When in doubt, verify the request using trusted contact methods.</p>
+    </section>
+  </main>
+</body>
+</html>

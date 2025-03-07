@@ -1,0 +1,230 @@
+/* General Styles */
+body {
+    background-color: black;
+    color: white;
+    font-family: monospace;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+/* Navigation Bar */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px; /* Fixed the padding issue */
+    width: 100%;
+    color: white;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: black;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.nav-left a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.nav-right {
+    display: flex;
+    gap: 30px; /* Adds spacing between nav links */
+}
+
+.nav-right a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+}
+
+/* Main Hacker-Style Animation Section */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Code-Like Typing Text */
+.code-text {
+    font-family: monospace;
+    font-size: 18px;
+    white-space: pre;
+    line-height: 1.2;
+}
+
+/* Final Title */
+.final-title {
+    font-family: monospace;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+/* Full-Screen Alert Section */
+#alert-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh; /* Takes up full screen height */
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: monospace;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+/* Large Main Text */
+.alert-main {
+    font-size: 3vw; /* Responsive large text */
+    font-weight: bold;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+/* Smaller Text Below */
+.alert-sub {
+    font-size: 1.5vw;
+}
+
+/* Scam Apps Section (Black Background) */
+#scam-apps-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: monospace;
+    padding: 50px 20px;
+    box-sizing: border-box;
+}
+
+/* Grid for 6 Large Icons */
+.scam-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px; /* Increased gap for better spacing */
+    width: 75%;
+    max-width: 900px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Individual App Box Styling */
+.scam-box {
+    width: 220px;  /* Increased size */
+    height: 220px;
+    border-radius: 35px; /* More rounded corners */
+    overflow: hidden; /* Ensures images don't exceed the box */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 2px 2px 10px rgba(255, 255, 255, 0.2);
+    transition: transform 0.2s ease-in-out;
+}
+
+/* App Logos (Fill Entire Box) */
+.scam-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image fills the box without distortion */
+}
+
+/* Hover Effect */
+.scam-box:hover {
+    transform: scale(1.05);
+}
+
+/* Scam Text */
+.scam-text {
+    font-size: 1.8vw;
+    font-weight: normal; /* Removed bold */
+    max-width: 80%;
+    margin-top: 30px;
+    margin-bottom: 25px;
+}
+
+/* "Learn More" Button */
+.scam-button {
+    display: inline-block;
+    font-size: 1.5vw;
+    font-weight: bold;
+    color: black;
+    background-color: white;
+    padding: 12px 24px;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease-in-out;
+}
+
+/* Button Hover Effect */
+.scam-button:hover {
+    background-color: grey;
+    transform: scale(1.05);
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+    .scam-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 85%;
+    }
+
+    .scam-box {
+        width: 160px;
+        height: 160px;
+    }
+
+    .scam-text {
+        font-size: 3.5vw;
+    }
+
+    .scam-button {
+        font-size: 3vw;
+        padding: 10px 20px;
+    }
+}
+
+/* Extra Small Screens */
+@media (max-width: 480px) {
+    .scam-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        width: 90%;
+    }
+
+    .scam-box {
+        width: 140px;
+        height: 140px;
+    }
+
+    .scam-text {
+        font-size: 4vw;
+    }
+
+    .scam-button {
+        font-size: 4vw;
+        padding: 8px 16px;
+    }
+}
+
+
+
