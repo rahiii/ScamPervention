@@ -1,0 +1,72 @@
+/* eyes.css */
+
+#eyes-animation {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 1100;
+    display: block; /* shown when triggered */
+}
+
+.eyes-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+/* Increased eye size */
+.eye {
+    width: 150px;
+    height: 75px;
+    background-color: white;
+    border-radius: 50%;
+    position: relative;
+    overflow: hidden;
+}
+
+/* The pupil is centered inside the eye and moves horizontally only */
+.pupil {
+    width: 30px;
+    height: 30px;
+    background-color: black;
+    border-radius: 50%;
+    position: absolute;
+    top: calc(50% - 15px);  /* vertically centered */
+    left: calc(50% - 15px); /* horizontally centered */
+    transition: left 0.5s;
+}
+
+/* The eyelid covers the eye when blinking */
+.eyelid {
+    position: absolute;
+    top: -75px;  /* starts hidden above the eye */
+    left: 0;
+    width: 100%;
+    height: 75px;
+    background-color: black;
+    transition: top 0.2s;
+    pointer-events: none;
+}
+
+/* Blink state: eyelid slides down to cover the eye */
+.eyelid.blink {
+    top: 0;
+}
+
+/* Final blink: keep the eyelid down (closed) */
+.eyelid.closed {
+    top: 0;
+}
+
+#message {
+    font-size: 24px;
+    font-family: monospace;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 2px solid white;
+    display: inline-block;
+    opacity: 0; /* hidden until typewriter effect starts */
+}

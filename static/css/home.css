@@ -1,0 +1,52 @@
+/* ============ HOME PAGE ============ */
+.container {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    padding: 20px;
+}
+
+.code-text {
+    font-family: monospace;
+    font-size: 18px;
+    white-space: pre;
+    line-height: 1.2;
+}
+
+.final-title {
+    font-family: monospace;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 1.3;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+#alert-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    width: 100%;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-family: monospace;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+.alert-main {
+    font-size: 3vw;
+    font-weight: bold;
+    max-width: 80%;
+    margin-bottom: 20px;
+}
+
+.alert-sub {
+    font-size: 1.5vw;
+}

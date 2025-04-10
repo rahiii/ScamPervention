@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing & Social Engineering Scams</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+</head>
+<body>
+    <nav>
+        <div class="nav-left">
+            <a href="{{ url_for('home') }}">Scam Prevention</a>
+        </div>
+        <div class="nav-right">
+            <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+            <a href="{{ url_for('resources') }}">Resources</a>
+            <a href="{{ url_for('about') }}">About</a>
+        </div>
+    </nav>
+
+    <main>
+
+        <!-- Hero Section with Title Overlay -->
+        <section class="hero-section">
+            <img src="{{ url_for('static', filename='images/Phising.jpg') }}" alt="Phishing Scam" class="hero-image">
+            <div class="hero-text">
+                <h1>Phishing & Social Engineering Scams</h1>
+            </div>
+        </section>
+    
+        <!-- Main Scrollable Content -->
+        <section class="phishing-content">
+            <p><strong>Scammers don’t always hack your devices — sometimes, they hack your trust.</strong>  
+            Phishing and social engineering are manipulative tactics that cybercriminals use to trick people into giving away sensitive information like passwords, credit card numbers, or bank details.</p>
+    
+            <h2>What is Phishing?</h2>
+            <p><strong>Phishing</strong> is when a scammer pretends to be a trustworthy source — like a bank, school, or even a friend — to trick you into clicking a link or sharing personal info.</p>
+            <ul>
+                <li>Emails: “Your account has been suspended, click here to reactivate.”</li>
+                <li>Text messages: “You’ve won a prize!”</li>
+                <li>Fake websites: mimic real ones but are designed to steal your data</li>
+            </ul>
+    
+            <h2>What is Social Engineering?</h2>
+            <p><strong>Social engineering</strong> is psychological manipulation to trick people into giving up confidential info. Think of it as human hacking.</p>
+            <ul>
+                <li>Fake customer support calls</li>
+                <li>Online friendships that lead to asking for money or secrets</li>
+                <li>Urgent requests that pressure you into quick action</li>
+            </ul>
+    
+            <h2>How to Stay Safe</h2>
+            <ol>
+                <li><strong>Think Before You Click:</strong> Suspicious links? Don’t touch.</li>
+                <li><strong>Verify Sources:</strong> Contact companies directly, not through the message.</li>
+                <li><strong>Watch for Errors:</strong> Spelling mistakes and weird URLs are red flags.</li>
+                <li><strong>Use MFA:</strong> Multi-Factor Authentication protects even if your password leaks.</li>
+                <li><strong>Never Share Sensitive Info:</strong> Legit organizations won’t ask for passwords over email or text.</li>
+            </ol>
+    
+            <p>Always double-check messages with the source — never trust unknown links.</p>
+        </section>
+    
+    </main>
+      
+</body>
+</html>

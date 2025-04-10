@@ -1,0 +1,43 @@
+@media (max-width: 768px) {
+    .scam-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        width: 85%;
+    }
+
+    .scam-box {
+        width: 160px;
+        height: 160px;
+    }
+
+    .scam-text {
+        font-size: 3.5vw;
+    }
+
+    .scam-button {
+        font-size: 3vw;
+        padding: 10px 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .scam-grid {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 20px;
+        width: 90%;
+    }
+
+    .scam-box {
+        width: 140px;
+        height: 140px;
+    }
+
+    .scam-text {
+        font-size: 4vw;
+    }
+
+    .scam-button {
+        font-size: 4vw;
+        padding: 8px 16px;
+    }
+}

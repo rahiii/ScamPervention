@@ -1,0 +1,86 @@
+/* learn_scams.css */
+
+/* Splash section styling for the eyes animation */
+#splash {
+    position: relative;
+    margin-top: 80px;             /* Adjust according to your nav height */
+    height: calc(100vh - 80px);
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Override fixed positioning from eyes.css for learn-scams page */
+#eyes-animation {
+    position: static !important;
+    transform: none !important;
+    margin: 0 auto;
+}
+
+/* Main content styling for the scam sections */
+main {
+    background-color: white;
+    min-height: 100vh;
+    /* Center content vertically and horizontally in the white area */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    box-sizing: border-box;
+}
+
+/* Scam Sections Title */
+#scam-sections h1 {
+    text-align: center;
+    font-family: monospace;
+    font-size: 2.5em;
+    margin-bottom: 40px;
+    color: #333;
+}
+
+/* Grid container for scam cards */
+.scam-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+/* Updated styling for individual scam cards */
+.scam-card {
+    position: relative;
+    background: linear-gradient(135deg, #ffffff, #f0f0f0);
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.scam-card:hover {
+    transform: translateY(-10px) scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.scam-card a {
+    display: block;
+    padding: 30px 20px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.scam-card h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.scam-card p {
+    font-size: 1em;
+    color: #666;
+    line-height: 1.5;
+}
