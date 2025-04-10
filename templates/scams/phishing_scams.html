@@ -54,7 +54,7 @@
       padding: 20px;
       border: 2px solid #ccc;
       border-radius: 8px;
-      background-color: #fafafa;
+      background-color:rgb(0, 0, 0);
       font-family: sans-serif;
       text-align: center;
     }
@@ -281,31 +281,31 @@
     // plus separate explanations for correct and incorrect responses.
     const quizData = [
       {
-        image: "https://via.placeholder.com/400x200?text=Look-Alike+URL",
+        image: '/static/images/Phising/Mini_Game/example1.png',
         correct: "phishing",
         explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
         explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
       },
       {
-        image: "https://via.placeholder.com/400x200?text=Mismatched+Domains",
+        image: "/static/images/Phising/Mini_Game/example2.png",
         correct: "phishing",
         explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
         explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
       },
       {
-        image: "https://via.placeholder.com/400x200?text=Invoice+Urgency",
+        image: "/static/images/Phising/Mini_Game/example3.png",
         correct: "phishing",
         explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
         explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
       },
       {
-        image: "https://via.placeholder.com/400x200?text=Legitimate+Dropbox",
+        image: "/static/images/Phising/Mini_Game/example4.png",
         correct: "legitimate",
         explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
         explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
       },
       {
-        image: "https://via.placeholder.com/400x200?text=2-Step+Verification",
+        image: "/static/images/Phising/Mini_Game/example5.png",
         correct: "legitimate",
         explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
         explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
