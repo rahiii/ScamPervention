@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Resources</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing & Social Engineering Scams</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+</head>
 <body>
     <nav>
         <div class="nav-left">
@@ -21,7 +22,61 @@
     </nav>
 
     <main>
-        <h1>Resources</h1>
+
+        <!-- Hero Section with Title Overlay -->
+        <section class="hero-section">
+            <img src="{{ url_for('static', filename='images/Resources.jpg') }}" alt="About" class="hero-image">
+            <div class="hero-text">
+                <h1>Resources</h1>
+            </div>
+        </section>
+    
+        <!-- Main Scrollable Content -->
+        <section class="tab-content">
+            <h2>Resources and Support</h2>
+            <h3>Downloadable Guides &amp; Tools</h3>
+            <ul>
+                <li><strong>CISA</strong> – “Outsmart Online Outlaws: Avoid Phishing Scams” Tip Sheet (<a href="https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-Phishing-Tip-Sheet.pdf">PDF Link</a>)</li>
+                <li><strong>FTC</strong> – “Cybersecurity for Small Business: Phishing” (<a href="https://www.ftc.gov/system/files/attachments/phishing/cybersecurity_sb_phishing.pdf">PDF Link</a>)</li>
+            </ul>
+
+            <h3>Website Authenticity Verification</h3>
+            <ul>
+                <li><strong>Nebraska.gov</strong> – “How to Avoid Scam Websites” Checklist (<a href="https://protectthegoodlife.nebraska.gov/sites/default/files/doc/how%20to%20avoid%20scam%20websites.pdf#:~:text=How%20to%20Avoid%20ScamWebsites%20Check,padlock%20symbol%20in%20the%20URL">PDF Link</a>)</li>
+                <li><strong>CISA</strong> – Guidance on Website Verification (<a href="https://www.cisa.gov/resources-tools/resources/project-upskill-checklist#:~:text=15.%20%C2%A0Access%20websites%20securely.%20,services%20while%20minimizing%20the%20risk">Site Link</a>)</li>
+            </ul>
+
+            <h3>Password Security Best Practice</h3>
+            <ul>
+                <li><strong>CISA</strong> – “Secure Our World: Passwords” Tip Sheet (<a href="https://www.cisa.gov/sites/default/files/2024-09/Secure-Our-World-Passwords-Tip-Sheet.pdf#:~:text=Strengthen%20Passwords%20with%20Three%20Simple,numbers">PDF Link</a>)</li>
+                <li><strong>FTC</strong> – "Stick with Security: Require Secure Passwords and Authentication" Blog (<a href="https://www.ftc.gov/business-guidance/blog/2017/08/stick-security-require-secure-passwords-and-authentication">Site Link</a>)</li>
+            </ul>
+
+            <h3>External Resources</h3>
+            <ul>
+                <li><strong>Anti-Phishing Working Group (APWG)</strong> – Industry alliance sharing the latest phishing trend reports and updates. (Browse APWG’s <a href="https://apwg.org/trendsreports/">Phishing Activity Trends Reports</a> for current statistics and threats.)</li>
+            </ul>
+
+            <h3>Government Cybersecurity Initiatives</h3>
+            <ul>
+                <li>Official resources from agencies for cybersecurity awareness. (For example, the <a href="https://consumer.ftc.gov/scams">FTC’s Consumer Advice on scams</a>, the <a href="https://www.fbi.gov/how-we-can-help-you/scams-and-safety/common-frauds-and-scams">FBI’s Common Scams page</a>, and <a href="https://www.cisa.gov/news-events/news/avoiding-social-engineering-and-phishing-attacks">CISA’s Security Tips</a>.)</li>
+            </ul>
+
+            <h3>Educational Resources from Cybersecurity Organizations</h3>
+            <ul>
+                <li>Free learning materials from non-profits and industry groups. (See the National Cybersecurity Alliance’s <a href="https://www.staysafeonline.org/resources/online-safety-and-privacy">Stay Safe Online</a> or SANS Institute’s <a href="https://www.sans.org/newsletters/ouch/">OUCH!</a> newsletters.)</li>
+            </ul>
+
+            <h2>Report a Scam</h2>
+
+            <ul>
+                <li><strong>Report to Email Providers</strong> – Learn how to flag phishing in <a href="https://support.google.com/mail/answer/8253?hl=en">Gmail</a> or <a href="https://support.microsoft.com/en-us/office/phishing-and-suspicious-behavior-in-outlook-0d882ea5-eedc-4bed-aebc-079ffa1105a3">Outlook/Hotmail</a>.</li>
+                <li><strong>Report Scams to Authorities</strong> – File a report with the <a href="https://reportfraud.ftc.gov/">FTC’s fraud reporting site</a>, <a href="https://www.actionfraud.police.uk/">Action Fraud</a> in the UK, or the <a href="https://antifraudcentre-centreantifraude.ca/">Canadian Anti-Fraud Centre</a>.</li>
+                <li><strong>Crowdsourced Scam Databases</strong> – Submit phishing examples to public databases like PhishTank.</li>
+            </ul>
+        </section>
+    
     </main>
+      
 </body>
 </html>

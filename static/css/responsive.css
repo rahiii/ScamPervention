@@ -41,3 +41,12 @@
         padding: 8px 16px;
     }
 }
+
+.tab-content {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 0 20px;
+    color: white;
+    font-family: 'Helvetica Neue', sans-serif;
+    line-height: 1.8;
+}

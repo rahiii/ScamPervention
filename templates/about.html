@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
+    <title>Phishing & Social Engineering Scams</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
 </head>
 <body>
     <nav>
@@ -21,7 +22,29 @@
     </nav>
 
     <main>
-        <h1>About</h1>
+
+        <!-- Hero Section with Title Overlay -->
+        <section class="hero-section">
+            <img src="{{ url_for('static', filename='images/About.jpg') }}" alt="About" class="hero-image">
+            <div class="hero-text">
+                <h1>About</h1>
+            </div>
+        </section>
+    
+        <!-- Main Scrollable Content -->
+        <section class="tab-content">
+            <p>Congrats! You Didn’t Win an iPhone – But You Can Win at Scam Prevention is an interactive cybersecurity education platform designed to help people recognize, understand, and avoid online scams in their everyday digital lives. 
+                As scams grow increasingly sophisticated—using tactics like phishing, smishing, vishing, and social engineering—traditional forms of cybersecurity education often fall short. 
+                Many rely on passive methods like lectures or quizzes, which rarely reflect the urgency or emotional manipulation seen in real scam attempts. 
+                This project was built on the belief that learning to stay safe online should be active, engaging, and accessible to everyone—regardless of age, background, or technical experience. 
+                Our platform transforms scam education into a hands-on experience, combining clear, easy-to-understand information with interactive minigames that simulate real-world scenarios. 
+                Users can practice sorting suspicious messages, building stronger passwords, and identifying common red flags—all while developing a sharper eye for digital threats.
+                Grounded in extensive research from industry, government, and academia, our approach emphasizes retention through participation. 
+                Every section of our site—from the educational hub to the resources page and game-based learning tools—is designed to empower users to make informed decisions and adopt better cybersecurity habits. 
+                Ultimately, our mission is simple: help people protect themselves online through education that sticks.</p>
+        </section>
+    
     </main>
+      
 </body>
 </html>
