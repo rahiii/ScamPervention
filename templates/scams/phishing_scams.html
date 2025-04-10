@@ -1,70 +1,368 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Phishing & Social Engineering Scams</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Phishing & Social Engineering Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: #fafafa;
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <nav>
-        <div class="nav-left">
-            <a href="{{ url_for('home') }}">Scam Prevention</a>
-        </div>
-        <div class="nav-right">
-            <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
-            <a href="{{ url_for('resources') }}">Resources</a>
-            <a href="{{ url_for('about') }}">About</a>
-        </div>
-    </nav>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
 
-    <main>
-
-        <!-- Hero Section with Title Overlay -->
-        <section class="hero-section">
-            <img src="{{ url_for('static', filename='images/Phising.jpg') }}" alt="Phishing Scam" class="hero-image">
-            <div class="hero-text">
-                <h1>Phishing & Social Engineering Scams</h1>
-            </div>
-        </section>
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/Phising.jpg') }}" alt="Phishing Scam" class="hero-image">
+      <div class="hero-text">
+        <h1>Phishing & Social Engineering Scams</h1>
+      </div>
+    </section>
     
-        <!-- Main Scrollable Content -->
-        <section class="phishing-content">
-            <p><strong>Scammers don’t always hack your devices — sometimes, they hack your trust.</strong>  
-            Phishing and social engineering are manipulative tactics that cybercriminals use to trick people into giving away sensitive information like passwords, credit card numbers, or bank details.</p>
-    
-            <h2>What is Phishing?</h2>
-            <p><strong>Phishing</strong> is when a scammer pretends to be a trustworthy source — like a bank, school, or even a friend — to trick you into clicking a link or sharing personal info.</p>
-            <ul>
-                <li>Emails: “Your account has been suspended, click here to reactivate.”</li>
-                <li>Text messages: “You’ve won a prize!”</li>
-                <li>Fake websites: mimic real ones but are designed to steal your data</li>
-            </ul>
-    
-            <h2>What is Social Engineering?</h2>
-            <p><strong>Social engineering</strong> is psychological manipulation to trick people into giving up confidential info. Think of it as human hacking.</p>
-            <ul>
-                <li>Fake customer support calls</li>
-                <li>Online friendships that lead to asking for money or secrets</li>
-                <li>Urgent requests that pressure you into quick action</li>
-            </ul>
-    
-            <h2>How to Stay Safe</h2>
-            <ol>
-                <li><strong>Think Before You Click:</strong> Suspicious links? Don’t touch.</li>
-                <li><strong>Verify Sources:</strong> Contact companies directly, not through the message.</li>
-                <li><strong>Watch for Errors:</strong> Spelling mistakes and weird URLs are red flags.</li>
-                <li><strong>Use MFA:</strong> Multi-Factor Authentication protects even if your password leaks.</li>
-                <li><strong>Never Share Sensitive Info:</strong> Legit organizations won’t ask for passwords over email or text.</li>
-            </ol>
-    
-            <p>Always double-check messages with the source — never trust unknown links.</p>
-        </section>
-    
-    </main>
+    <!-- Main Scrollable Content -->
+    <section class="phishing-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong> 
+      Cybercriminals employ sophisticated techniques to manipulate you into revealing personal information, financial details, or login credentials. By knowing how these scams work—from urgent phishing emails to deceptive texts and calls—you can protect yourself effectively.</p>
       
+      <!-- Phishing (Email Scams) -->
+      <h2>Phishing (Email Scams)</h2>
+      <p><strong>Description:</strong> Phishing scams use deceptive emails that impersonate trusted institutions such as banks, online services, or employers. These emails may warn you of account suspension, unauthorized access, or security breaches—and include harmful attachments that install malware when opened.</p>
+      <h3>Common Tactics in Phishing</h3>
+      <ul>
+        <li><strong>Fake Urgency:</strong> <em>Example:</em> “Your account has been locked due to unusual activity! Log in now to restore access.”
+          (The link directs you to a counterfeit login page.)</li>
+        <li><strong>Impersonation:</strong> <em>Example:</em> An email appearing to be from Amazon stating, “Your recent order could not be processed. Click here to update your payment information.”
+          (Clicking the link leads to a fraudulent payment page.)</li>
+        <li><strong>Malicious Attachments:</strong> <em>Example:</em> An email from a company’s HR with an attachment titled “Updated Benefits Package.”
+          (Opening it installs malware.)</li>
+      </ul>
+      <h3>How to Spot a Phishing Scam</h3>
+      <ul>
+        <li>Emails that demand immediate action over security issues.</li>
+        <li>Sender addresses or domains that are slightly off from the authentic ones.</li>
+        <li>Unexpected attachments from unknown senders.</li>
+        <li>Generic greetings like “Dear Customer” instead of your name.</li>
+      </ul>
+      <!-- Figure for Phishing Example -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Phising/phishing-example.png') }}" alt="Example of a phishing email">
+        <figcaption>How to tell this is a phishing email: This Amazon phishing email comes from a suspicious email address, doesn’t include the customer’s name, and pressures the customer to update their payment information quickly.</figcaption>
+      </figure>
+      
+      <!-- Smishing (SMS Scams) -->
+      <h2>Smishing (SMS Scams)</h2>
+      <p><strong>Description:</strong> Smishing uses fraudulent text messages that appear to come from reputable companies (such as banks or shipping services). These messages include links to fake login pages or malware downloads. Since SMS messages lack visual security cues like verified sender domains, extra caution is essential.</p>
+      <h3>Common Tactics in Smishing</h3>
+      <ul>
+        <li><strong>Delivery Scams:</strong> <em>Example:</em> “Your FedEx package is delayed. Click here to reschedule: [bit.ly/fake-link].”</li>
+        <li><strong>Banking Alerts:</strong> <em>Example:</em> “Suspicious login detected! Verify your identity immediately: [fake-bank-link].”</li>
+        <li><strong>Fake Prize Notifications:</strong> <em>Example:</em> “Congratulations! You’ve won a $500 Walmart gift card. Claim it now: [fraudulent-link].”</li>
+      </ul>
+      <h3>How to Spot a Smishing Scam</h3>
+      <ul>
+        <li>Texts from unknown numbers urging immediate action.</li>
+        <li>Messages containing shortened or suspicious links.</li>
+        <li>Requests for personal or financial information via SMS.</li>
+        <li>Unexpected alerts about packages, bank issues, or prizes.</li>
+      </ul>
+      <!-- Figure for Smishing Example -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Phising/smishing-example.png') }}" alt="Example of a smishing text message">
+        <figcaption>How to tell this is a phishing text message: A phishing text typically uses a generic greeting or no greeting at all, employs urgent language to pressure immediate action, and includes suspicious links or instructions that lead you away from verified websites—red flags that indicate the message may be a scam.</figcaption>
+      </figure>
+      
+      <!-- Vishing (Phone Call Scams) -->
+      <h2>Vishing (Phone Call Scams)</h2>
+      <p><strong>Description:</strong> In vishing scams, fraudsters call you while posing as representatives of banks, government agencies, or tech support. These calls create urgency—claiming account compromises, tax issues, or computer infections—in order to pressure you into revealing sensitive details.</p>
+      <h3>Common Tactics in Vishing</h3>
+      <ul>
+        <li><strong>Caller ID Spoofing:</strong> <em>Example:</em> A caller appears to be from your bank, warns you of a compromise, and requests your login credentials.</li>
+        <li><strong>Fear Tactics:</strong> <em>Example:</em> An impersonated IRS agent claims you owe thousands and threatens legal action unless you pay immediately.</li>
+        <li><strong>Tech Support Scams:</strong> <em>Example:</em> A pop-up warns, “Your system has been infected! Call Apple Support now.”
+          (You are urged to download remote access software.)</li>
+      </ul>
+      <h3>How to Spot a Vishing Scam</h3>
+      <ul>
+        <li>Unexpected calls from “support teams” asking for remote access or sensitive data.</li>
+        <li>Requests for payment via gift cards, cryptocurrency, or wire transfers.</li>
+        <li>Calls that use urgency or threats of legal consequences.</li>
+      </ul>
+      <!-- Figure for Vishing Example -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Phising/vishing-example.png') }}" alt="Example of a vishing phone call">
+        <figcaption>How to tell these are vishing calls: These voicemails use urgent or intimidating language, claim you’ll face serious consequences if you don’t respond, and often demand personal or financial details. Official organizations rarely threaten immediate legal action or request sensitive information over the phone—hallmarks of a vishing (voice phishing) scam.</figcaption>
+      </figure>
+      
+      <!-- Additional Information on Social Engineering -->
+      <h2>Red Flags to Watch For</h2>
+      <ul>
+        <li>Unsolicited messages asking for personal details.</li>
+        <li>Urgent language promising severe consequences.</li>
+        <li>Links that lead to fake login pages (hover to inspect URLs).</li>
+        <li>Unexpected attachments and low-quality images or logos.</li>
+        <li>Calls demanding immediate payment—especially via gift cards or cryptocurrency.</li>
+        <li>Offers that seem too good to be true.</li>
+      </ul>
+      
+      <!-- What to Do If You Click a Suspicious Link -->
+      <h2>If You Click a Suspicious Link</h2>
+      <ol>
+        <li><strong>Change your password immediately:</strong> Use a strong, unique combination of letters, numbers, and symbols.</li>
+        <li><strong>Enable Two-Factor Authentication (2FA):</strong> Add an extra layer of security to your accounts.</li>
+        <li><strong>Run a full antivirus scan:</strong> Ensure your device is free from malware that might have been installed.</li>
+        <li><strong>Report the phishing message:</strong> Forward it to your provider or the authorities (for example, reportphishing@apwg.org) and file a complaint with the FTC at ftc.gov/Complaint.</li>
+      </ol>
+      <p>Consider using advanced security software such as Norton 360 Deluxe to help protect your devices against these threats.</p>
+      
+      <!-- Mini Game Section -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a phishing attempt or a legitimate communication.
+      </p>
+      <div id="mini-game">
+        <!-- Embedded Scam Spotter Quiz Game with two options -->
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('phishing')">Phishing</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <small>
+        <h2>Work Cited</h2>
+        <ul>
+          <li>Dhamija, R., Tygar, J. D., &amp; Hearst, M. “Why Phishing Works.” CHI Conference, 2006.</li>
+          <li>Heijden, A. V. D., &amp; Allodi, L. “Cognitive Triaging of Phishing Attacks.” USENIX Security Symposium, 2019.</li>
+          <li>Lain, D., Kostiainen, K., &amp; Čapkun, S. “Phishing in Organizations: Findings from a Large-Scale and Long-Term Study.” IEEE Symposium on Security and Privacy, 2022.</li>
+          <li>Tabassum, S., Faklaris, C., &amp; Lipford, H. R. “What Drives SMiShing Susceptibility?” SOUPS Conference, 2024.</li>
+          <li>Tu, H., Doupé, A., &amp; Zhao, Z. “Users Really Do Answer Telephone Scams.” USENIX Security Symposium, 2019.</li>
+          <li>Wash, R., &amp; Cooper, M. “Who Provides Phishing Training?” CHI Conference, 2018.</li>
+        </ul>
+      </small>
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    // Each quiz item includes an image, the correct answer ("phishing" or "legitimate"),
+    // plus separate explanations for correct and incorrect responses.
+    const quizData = [
+      {
+        image: "https://via.placeholder.com/400x200?text=Look-Alike+URL",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
+        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+      },
+      {
+        image: "https://via.placeholder.com/400x200?text=Mismatched+Domains",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
+        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+      },
+      {
+        image: "https://via.placeholder.com/400x200?text=Invoice+Urgency",
+        correct: "phishing",
+        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
+        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
+      },
+      {
+        image: "https://via.placeholder.com/400x200?text=Legitimate+Dropbox",
+        correct: "legitimate",
+        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
+        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+      },
+      {
+        image: "https://via.placeholder.com/400x200?text=2-Step+Verification",
+        correct: "legitimate",
+        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
+        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Load the current quiz item: display its image and reset feedback/buttons.
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      
+      // Re-enable answer buttons.
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    // Check the user's choice and display feedback accordingly.
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    // Advance to the next quiz item or show the final score.
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = `
+          <h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>
+        `;
+      }
+    }
+
+    // Initialize the quiz when the page loads.
+    loadQuestion();
+  </script>
 </body>
 </html>
