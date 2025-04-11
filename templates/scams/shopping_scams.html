@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Shopping & E-Commerce Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ecommerce.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/Ecommerce.jpg') }}" alt="Online Shopping & E-Commerce Scams" class="hero-image">
+      <div class="hero-text">
+        <h1>Online Shopping & E-Commerce Scams</h1>
+      </div>
+    </section>
+    
+    <!-- Main Scrollable Content -->
+    <section class="ecommerce-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong>
+      Online shopping offers unparalleled convenience—but it also opens the door to a variety of scams. Cybercriminals exploit both well-known e-commerce platforms and social media marketplaces, using tactics that range from fake product listings to overpayment scams. Even platforms like Instagram, Depop, and Poshmark can be infiltrated by fraudsters. Knowing what to look for is key to keeping your money and personal data safe.</p>
+      
+      <!-- Marketplace Scams -->
+      <h2>Marketplace Scams</h2>
+      <p><strong>Description:</strong> Scammers take advantage of online marketplaces by posting listings with deals that are far too good to be true. Once a buyer submits payment, the seller may either disappear entirely or ship a counterfeit product. 
+      <br><br><em>Detection Tips:</em> Look for unusually low prices, incomplete seller profiles, inconsistent contact details, poor grammar in listings, and an absence of transaction history. Be wary if you feel pressured into a quick decision or if the seller seems reluctant to provide additional information.</p>
+      <h3>Common Tactics:</h3>
+      <ul>
+        <li><strong>Fake Listings:</strong> For example, a seller advertises a brand-new PlayStation 5 for $200 on Facebook Marketplace. After payment is made via a money transfer app, the listing vanishes and the product is never delivered.</li>
+      </ul>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online1.jpg') }}" alt="Fake marketplace listing">
+        <figcaption>Example: A fake listing on a popular marketplace with an unbelievably low price.</figcaption>
+      </figure>
+      
+      <!-- Fake Product Listings -->
+      <h2>Fake Product Listings</h2>
+      <p><strong>Description:</strong> These scams use realistic photos and detailed descriptions to mimic genuine products. Sometimes, even customer reviews or ratings are fabricated to build trust. However, once payment is processed, buyers can end up with counterfeit items—or nothing at all.
+      <br><br><em>Detection Tips:</em> Compare product prices across multiple platforms, scrutinize the product details, and use reverse image searches on product photos. Authentic sellers typically provide verified contact information and robust customer service details.</p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online2.jpg') }}" alt="Fake product listing">
+        <figcaption>Example: Genuine-looking product images used to deceive buyers.</figcaption>
+      </figure>
+      
+      <!-- Overpayment Scams -->
+      <h2>Overpayment Scams</h2>
+      <p><strong>Description:</strong> Often seen on platforms like eBay, overpayment scams occur when a scammer “accidentally” sends extra money for an item and then requests a refund of the surplus. Once the refund is made, the initial (fraudulent) payment is reversed.
+      <br><br><em>Detection Tips:</em> Always verify the payment status through your payment provider. Be cautious of buyers who quickly overpay and then pressure you for a refund, especially if the payment isn’t confirmed in your account.</p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online3.jpg') }}" alt="Overpayment scam example">
+        <figcaption>Example: A buyer receives an extra payment and is tricked into refunding money that was never legitimately received.</figcaption>
+      </figure>
+      
+      <!-- Social Media Shopping Scams -->
+      <h2>Social Media Shopping Scams</h2>
+      
+      <!-- Instagram Shopping Scams -->
+      <h3>Instagram Shopping Scams</h3>
+      <p><strong>Description:</strong> On Instagram, scammers establish fake storefronts using posts, stories, and direct messages. They often use stolen or counterfeit images and engage in influencer-like tactics to build quick trust. Fraudsters may also use “limited time” offers to pressure users into making immediate purchases.
+      <br><br><em>Detection Tips:</em> Look for verified badges on accounts, check for a robust posting history, and verify that seller profiles have consistent branding. Be skeptical of links that lead to external websites, and always research the seller before proceeding with any purchase.</p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online4.jpg') }}" alt="Instagram scam example">
+        <figcaption>Example: An enticing Instagram post that redirects users to a fraudulent online store.</figcaption>
+      </figure>
+      
+      <!-- Depop & Poshmark Scams -->
+      <h3>Depop &amp; Poshmark Scams</h3>
+      <p><strong>Description:</strong> In fashion resale marketplaces like Depop and Poshmark, scammers often list designer or vintage clothing at incredibly low prices. Fraudsters may use stolen images or altered descriptions, and sometimes pressure buyers to complete transactions outside the platform—where buyer protection is lost.
+      <br><br><em>Detection Tips:</em> Always check the seller’s reviews and transaction history. Be cautious of listings with prices that seem too good to be true. Insist on using the platform’s secure payment system, and verify return or refund policies before purchasing.</p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online5.jpg') }}" alt="Depop/Poshmark scam example">
+        <figcaption>Example: A fraudulent listing on Depop or Poshmark using images lifted from legitimate sellers.</figcaption>
+      </figure>
+      
+      <!-- Other eCommerce Scam Tactics -->
+      <h2>Other eCommerce Scam Tactics</h2>
+      <p><strong>Description:</strong> Cybercriminals employ a range of additional deceptive practices that can trick buyers out of their money or sensitive information. These tactics include:</p>
+      <ul>
+        <li><strong>Brand Impersonation:</strong> Scammers replicate logos, websites, and customer support channels of reputable brands to impersonate them and steal personal data.</li>
+        <li><strong>Google Ads Click Fraud:</strong> Competitors or automated bots simulate clicks on pay-per-click ads, draining advertising budgets and distorting analytics.</li>
+        <li><strong>Card Cracking (CNP Fraud):</strong> Fraudsters use stolen credit card details to perform unauthorized transactions without the physical card.</li>
+        <li><strong>Account Takeover:</strong> Unauthorized access to legitimate customer accounts can lead to fraudulent purchases or the misuse of loyalty points.</li>
+        <li><strong>Refund Scams:</strong> Some buyers claim non-delivery of goods in order to secure refunds while retaining the products.</li>
+        <li><strong>Mail Interception &amp; Triangulation Fraud:</strong> After order confirmation, scammers redirect shipping addresses or set up fake storefronts to harvest credit card data.</li>
+        <li><strong>Affiliate Scams:</strong> Dishonest affiliates inflate referral activity or manipulate tracking codes to earn unmerited commissions.</li>
+      </ul>
+      
+      <!-- Steps to Protect Yourself -->
+      <h2>Steps to Protect Yourself</h2>
+      <ol>
+        <li><strong>Verify the Seller:</strong> Research reviews, check seller ratings, and confirm a reliable transaction history before committing.</li>
+        <li><strong>Use Secure Payment Methods:</strong> Only use trusted payment gateways that offer buyer protection and ensure URLs begin with “https”.</li>
+        <li><strong>Avoid “Too Good to Be True” Deals:</strong> Exceptionally low prices are often a red flag for scams. Compare prices with multiple sources before purchasing.</li>
+        <li><strong>Keep Transactions On-Platform:</strong> Stay within the platform’s secure system for all communications and payments; avoid moving off-platform where protections may lapse.</li>
+        <li><strong>Trust Your Instincts:</strong> If any aspect of a deal seems off—such as rushed payment requests or vague seller details—it’s best to cancel the transaction.</li>
+      </ol>
+      <p>By following these precautions and staying informed about new scam tactics, you can significantly reduce your risk of becoming a victim of online shopping fraud.</p>
+      
+      <!-- Mini Game Section (Quiz remains unchanged) -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a scam attempt or a legitimate communication.
+      </p>
+      <div id="mini-game">
+        <!-- Embedded Scam Spotter Quiz Game with two options -->
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('phishing')">Phishing</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <small>
+        <h2>Work Cited</h2>
+        <ul>
+          <li>Go, R. A. (202X). 10 Common eCommerce Scams and How to Avoid Them. MyFBAPrep.</li>
+          <li>Florida Department of Agriculture and Consumer Services. (2025). Online Shopping Scams.</li>
+          <li>Stripe. (202X). Types of eCommerce Fraud.</li>
+          <li><a href="https://www.propublica.org/article/how-to-avoid-being-scammed-on-facebook-marketplace" target="_blank">ProPublica. (n.d.). How to Avoid Being Scammed on Facebook Marketplace. Retrieved from https://www.propublica.org/article/how-to-avoid-being-scammed-on-facebook-marketplace</a></li>
+          <li><a href="https://www.nytimes.com/wirecutter/blog/amazon-counterfeit-fake-products/" target="_blank">The New York Times Wirecutter. (n.d.). Amazon Counterfeit &amp; Fake Products. Retrieved from https://www.nytimes.com/wirecutter/blog/amazon-counterfeit-fake-products/</a></li>
+          <li><a href="https://www.aura.com/learn/paypal-scams" target="_blank">Aura. (n.d.). Understanding PayPal Scams. Retrieved from https://www.aura.com/learn/paypal-scams</a></li>
+        </ul>
+      </small>
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    const quizData = [
+      {
+        image: '/static/images/Phising/Mini_Game/example1.png',
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
+        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example2.png",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
+        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example3.png",
+        correct: "phishing",
+        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
+        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example4.png",
+        correct: "legitimate",
+        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
+        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example5.png",
+        correct: "legitimate",
+        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, consider unphishable options like Passkeys.",
+        explanationIncorrect: "Never share a 2-Step code outside of a verification process you initiated, such as during a website login or a phone call with your bank. Consider secure alternatives like Passkeys."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = 
+          `<h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>

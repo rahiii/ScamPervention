@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ticket Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/ticket_scams.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 0.9rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color: rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/ticket_scams/hero.jpg') }}" alt="Ticket Scams" class="hero-image">
+      <div class="hero-text">
+        <h1>Ticket Scams</h1>
+      </div>
+    </section>
+    
+    <!-- Main Scrollable Content -->
+    <section class="ticket-scams-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong>  
+         Ticket scams are rampant, particularly during high-demand periods for concerts, sports, and theater. Fraudsters exploit buyers' excitement by creating fake websites, misleading social media posts, counterfeit tickets, and deceptive payment processes. According to sources like Good Housekeeping and Eventbrite, falling for these scams can result in significant financial loss and emotional distress. Being informed about the tactics used is the first step in protecting yourself.
+      </p>
+      
+      <!-- Fake Ticket Websites & Counterfeit Tickets -->
+      <h2>Fake Ticket Websites &amp; Counterfeit Tickets</h2>
+      <p><strong>Description:</strong> Scammers design websites that closely mimic reputable ticketing sites. They lure buyers by offering tickets at unbelievably low prices or for sold-out events. Although these websites may use professional graphics and convincing copy, the tickets they offer are either counterfeit or never delivered.
+         <br><br><em>Detection Tips:</em>  
+         - Check the website URL for extra letters, misspellings, or unusual domain extensions.  
+         - Look for security indicators such as “https” and padlock icons.  
+         - Compare the site design and content with the official ticket vendor’s website.  
+      </p>
+      
+      <!-- Social Media Ticket Scams -->
+      <h2>Social Media Ticket Scams</h2>
+      <p><strong>Description:</strong> Social media platforms are a hotbed for ticket scams. Fraudsters post fake advertisements, create fraudulent groups, and use direct messaging to offer tickets at attractive rates. They often press buyers with urgent messages and “limited time” offers.
+         <br><br><em>Detection Tips:</em>  
+         - Verify the credibility of the seller’s social media profile (check for verified badges and reviews).  
+         - Be cautious of deals that require rapid action or request to complete transactions off the official platform.  
+         - Look out for inconsistent or poorly written posts.
+      </p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/TicketSales/Ticket1.jpg') }}" alt="Social Media Ticket Scam Example">
+        <figcaption>Example: A deceptive social media post promoting dubious ticket deals.</figcaption>
+      </figure>
+      
+      <!-- Duplicate Ticket Sales -->
+      <h2>Duplicate Ticket Sales</h2>
+      <p><strong>Description:</strong> In duplicate ticket sales, the same ticket is sold multiple times. Fraudsters use identical ticket confirmations or QR codes to secure payments from different buyers. This tactic is particularly common in secondary ticket markets.
+         <br><br><em>Detection Tips:</em>  
+         - Purchase tickets only from official or certified reselling platforms.  
+         - Be cautious if you see the same ticket being advertised in multiple listings.  
+         - Ask for ticket verification numbers and compare them if possible.
+      </p>
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/TicketSales/Ticket2.jpg') }}" alt="Payment Scam Example">
+        <figcaption>Example: A fraudulent error message designed to trick buyers into insecure payments.</figcaption>
+      </figure>
+      
+      <!-- Seat Scams & Scattered Seats -->
+      <h2>Seat Scams &amp; Scattered Seats</h2>
+      <p><strong>Description:</strong> Some scammers sell tickets that promise premium seats or group seating, but in reality, you may receive tickets for seats in a far less desirable location. This scam can also involve selling tickets that are not even valid for the event.
+         <br><br><em>Detection Tips:</em>  
+         - Verify the seating arrangement using the venue’s official seat map.  
+         - Request clear photos of the ticket with seat numbers visible.  
+         - Compare seating details with those provided on the official event site.
+      </p>
+      
+      <!-- Payment Scams & False Error Messages -->
+      <h2>Payment Scams &amp; False Error Messages</h2>
+      <p><strong>Description:</strong> Scammers may manipulate the payment process by displaying false error messages to force additional payments or by pushing for insecure payment methods like bank transfers, gift cards, or cryptocurrency. Such tactics leave you unprotected if funds are lost.
+         <br><br><em>Detection Tips:</em>  
+         - Always confirm that a payment has been securely processed before sending additional funds.  
+         - Use credit or debit cards over wire transfers for the benefit of chargeback and fraud protection features.  
+         - Be wary of sellers who insist on payments through non-traditional methods.
+      </p>
+      
+      <!-- Steps to Protect Yourself -->
+      <h2>Steps to Protect Yourself</h2>
+      <ol>
+        <li><strong>Verify the Seller:</strong> Research reviews, examine the seller’s history, and seek recommendations before purchasing tickets.</li>
+        <li><strong>Use Secure Payment Methods:</strong> Confirm the website is secure (look for “https”) and use credit or debit cards which offer additional fraud protection and the possibility of chargebacks.</li>
+        <li><strong>Avoid Deals That Seem Too Good:</strong> If a deal is too attractive to be true, cross-check prices on multiple reputable platforms.</li>
+        <li><strong>Keep Transactions On-Platform:</strong> Avoid moving a transaction to a third-party communication channel or payment method, as this may void buyer protection.</li>
+        <li><strong>Trust Your Instincts:</strong> If anything feels off—rushed payment requests, unclear seller details, or questionable ticket information—cancel the purchase and verify through official channels.</li>
+      </ol>
+      <p>By following these comprehensive guidelines and staying up-to-date with evolving scam tactics, you significantly lower your risk of falling victim to ticket scams.</p>
+      
+      <!-- Mini Game Section (Quiz remains unchanged) -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a scam attempt or a legitimate ticket communication.
+      </p>
+      <div id="mini-game">
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('phishing')">Phishing</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <small>
+        <h2>Work Cited</h2>
+        <ul>
+          <li>Good Housekeeping. “Ticket Scams to Watch Out For.” Good Housekeeping, 2024.</li>
+          <li>FireLake Arena. “How to Avoid Ticket Scams.” FireLake Arena, n.d.</li>
+          <li>Eventbrite. “Ticket Scams: How to Avoid Them and Protect Yourself.” Eventbrite, 2024.</li>
+          <li>Ticketmaster Help. “Common Ticket Scams to Avoid.” Ticketmaster Help, n.d.</li>
+          <li>Norton. “Ticketmaster Scams.” Norton, n.d.</li>
+        </ul>
+      </small>
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    const quizData = [
+      {
+        image: '/static/images/Phising/Mini_Game/example1.png',
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites.",
+        explanationIncorrect: "The URL appears correct but is a look-alike; always double-check before clicking."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example2.png",
+        correct: "phishing",
+        explanationCorrect: "You identified the mismatched domains and an implausible offer—clear indicators of a scam.",
+        explanationIncorrect: "The evidence suggests a scam based on inconsistent domain names and unrealistic offers."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example3.png",
+        correct: "phishing",
+        explanationCorrect: "The urgency tactics used here signal a phishing scam.",
+        explanationIncorrect: "Urgency is a red flag; this tactic is commonly used by scammers."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example4.png",
+        correct: "legitimate",
+        explanationCorrect: "The secure URL and verified details confirm this is a legitimate listing.",
+        explanationIncorrect: "The indicators show authenticity; this listing appears genuine."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example5.png",
+        correct: "legitimate",
+        explanationCorrect: "The ticket details and seat information match the venue’s official data.",
+        explanationIncorrect: "The consistency with official venue information indicates this listing is authentic."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = 
+          `<h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>`;
+      }
+    }
+
+    loadQuestion();
+  </script>
+</body>
+</html>
