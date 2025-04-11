@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Support and IT Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 80%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 1.0rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color:rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/TechSupport.jpg') }}" alt="IT Scam" class="hero-image">
+      <div class="hero-text">
+        <h1>Tech Support and IT Scams</h1>
+      </div>
+    </section>
+    
+    <!-- Main Scrollable Content -->
+    <section class="phishing-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong> 
+        Tech support scams trick users into believing their computers or devices are infected with viruses or compromised. Scammers may use fake pop-ups, unsolicited phone calls, or emails to impersonate technical support agents from trusted companies like Microsoft, Apple, or your internet provider. Their goal is to gain remote access to your system or pressure you into paying for unnecessary “repairs.”</p>
+      
+      <!-- Tech and IT Scams -->
+      <h3>Common Tactics in Tech Support Scams</h3>
+      <ul>
+        <li><strong>Fake Pop-Ups with Scary Alerts:</strong> <em>Example:</em> A webpage freezes and displays a message like “Your system has been infected! Call Apple Support now.” (The goal is to frighten the user into calling a fake tech support number.)</li>
+        <li><strong>Caller ID Spoofing:</strong> <em>Example:</em> A scammer calls, and your phone says it’s from “Microsoft Support.” (In reality, the number is spoofed. The caller is not affiliated with any tech company.)</li>
+        <li><strong>Remote Access Installation:</strong> <em>Example:</em> You’re told to install software like TeamViewer, AnyDesk, or LogMeIn. (Once installed, the scammer can control your system, steal data, or plant malware.)</li>
+        <li><strong>Pressure to Pay for Fake Fixes:</strong> <em>Example:</em> After running fake diagnostics, the scammer demands payment for virus removal, software licenses, or “support contracts.” (Payment is requested via gift cards, cryptocurrency, or direct transfer—making it harder to trace.)</li>
+      </ul>
+
+      <h3>How to Spot a Tech Support Scam</h3>
+      <ul>
+        <li>Sudden pop-ups or error messages with urgent warnings.</li>
+        <li>Messages claiming your personal information is at risk without verification.</li>
+        <li>Prompts to call a toll-free number immediately.</li>
+        <li>Requests to install software you’ve never heard of.</li>
+        <li>Callers demanding payment on the spot for repairs or cleanup.</li>
+        <li>Poor grammar, technical buzzwords, or robotic scripts in communications.</li>
+      </ul>
+
+      <!-- Scam Examples -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/TechSupport/Tech1.jpg') }}" alt="Fake Apple security alert pop-up">
+        <figcaption>How to tell this is a scam: This pop-up mimics Apple branding, uses alarming language like “identity theft,” and urges the user to call a fake support number. The site shown is not affiliated with Apple, and no legitimate company would lock your browser this way.</figcaption>
+      </figure>
+
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/TechSupport/Tech2.jpg') }}" alt="Fake Windows lock screen scam">
+        <figcaption>How to tell this is a scam: This full-screen message locks your browser and demands you call a support number due to a virus. Real tech companies do not issue threats or lock access like this—especially not through a browser.</figcaption>
+      </figure>
+
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/TechSupport/Tech3.jpg') }}" alt="Fake Windows Defender Zeus Virus alert">
+        <figcaption>How to tell this is a scam: This fake Windows Defender alert warns about a “Zeus virus” and pressures the user to call a number. It tries to appear legitimate but uses scare tactics, vague threats, and an unverified toll-free line.</figcaption>
+      </figure>
+
+      <h3>Red Flags to Watch For</h3>
+      <ul>
+        <li>Pop-ups that freeze your browser or claim your device is infected.</li>
+        <li>Messages urging you to call a tech support number or contact “certified technicians.”</li>
+        <li>Webpages pretending to be antivirus or system scan results.</li>
+        <li>Scare tactics, such as warnings of stolen passwords or identity theft.</li>
+        <li>Requests to give someone remote control of your computer.</li>
+        <li>Payment demands in unconventional forms like gift cards or cryptocurrency.</li>
+        <li>Threats of legal action or account suspension tied to technical issues.</li>
+      </ul>
+
+      <h3>If You Fell for a Tech Support Scam</h3>
+      <ol>
+        <li><strong>Disconnect from the internet:</strong> This can halt the scammer’s remote access if software was installed.</li>
+        <li><strong>Uninstall any remote-access programs:</strong> Immediately remove apps like TeamViewer or AnyDesk if you were tricked into installing them.</li>
+        <li><strong>Run a full antivirus and malware scan:</strong> Use trusted software to remove any threats.</li>
+        <li><strong>Change your passwords:</strong> Focus on banking, email, and any accounts that may have been accessed.</li>
+        <li><strong>Contact your bank or credit card company:</strong> If you paid the scammer, dispute the charges and monitor your accounts.</li>
+        <li><strong>Report the scam:</strong> File a report with the FTC at <a href="https://www.ftc.gov/Complaint" target="_blank">ftc.gov/Complaint</a> or report it to the platform involved (Google, Apple, Microsoft).</li>
+      </ol>
+      <!-- Mini Game Section -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a tech support scam attempt or a legitimate communication.
+      </p>
+      <div id="mini-game">
+        <!-- Embedded Scam Spotter Quiz Game with two options -->
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('scam')">Scam</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <small>
+        <h2>Works Cited</h2>
+        <ul>
+          <li>Federal Trade Commission. "How To Spot, Avoid, and Report Tech Support Scams." <em>Consumer FTC</em>, 22 Nov. 2024, <a href="https://www.consumer.ftc.gov/articles/how-spot-avoid-and-report-tech-support-scams" target="_blank">www.consumer.ftc.gov</a>.</li>          
+          <li>Nikiforakis, Nick, Najmeh Miramirkhani, and Oleksii Starov. "A Large-Scale Analysis of Technical Support Scams." <em>Proceedings of the Network and Distributed System Security Symposium (NDSS)</em>, 2017, <a href="https://www.securitee.org/files/tss_ndss2017.pdf" target="_blank">www.securitee.org</a>.</li>         
+          <li>Digital Forensics Blog Team. "Tech Support Scams: How Cybercriminals Exploit Trust." <em>Digital Forensics</em>, 7 Mar. 2025, <a href="https://www.digitalforensics.com/blog/software/tech-support-scams/" target="_blank">www.digitalforensics.com</a>.</li>         
+          <li>Microsoft Corporation. "2021 Global Survey on Tech Support Scams." <em>Microsoft Security Blog</em>, Oct. 2021, <a href="https://www.microsoft.com/security/blog/2021/10/05/global-survey-on-tech-support-scams/" target="_blank">www.microsoft.com</a>.</li>         
+          <li>Wikipedia Contributors. "Technical Support Scam." <em>Wikipedia</em>, last updated 28 Mar. 2014, <a href="https://en.wikipedia.org/wiki/Technical_support_scam" target="_blank">en.wikipedia.org</a>.</li>          
+          <li>Norton LifeLock Inc. "Top Phishing Threats to Consumers: Technical Support Scams." <em>Norton Security Center</em>, Oct. 2021, <a href="https://www.norton.com/security-center/phishing-threats-tech-support-scams" target="_blank">www.norton.com</a>.</li>
+        </ul>
+      </small>      
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    // Each quiz item includes an image, the correct answer ("phishing" or "legitimate"),
+    // plus separate explanations for correct and incorrect responses.
+    const quizData = [
+      {
+        image: '/static/images/Phising/Mini_Game/example1.png',
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
+        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example2.png",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
+        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example3.png",
+        correct: "phishing",
+        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
+        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example4.png",
+        correct: "legitimate",
+        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
+        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example5.png",
+        correct: "legitimate",
+        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
+        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Load the current quiz item: display its image and reset feedback/buttons.
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      
+      // Re-enable answer buttons.
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    // Check the user's choice and display feedback accordingly.
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    // Advance to the next quiz item or show the final score.
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = `
+          <h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>
+        `;
+      }
+    }
+
+    // Initialize the quiz when the page loads.
+    loadQuestion();
+  </script>
+</body>
+</html>

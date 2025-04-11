@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Social Media and Identity Privacy</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 70%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 1.0rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color:rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/SocialMedia.jpg') }}" alt="Social Media Scam" class="hero-image">
+      <div class="hero-text">
+        <h1>Social Media and Identity Privacy</h1>
+      </div>
+    </section>
+    
+    <!-- Main Scrollable Content -->
+    <section class="phishing-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong> 
+        Social media platforms are prime targets for cybercriminals. Scammers may impersonate trusted friends, celebrities, or companies to trick users into clicking malicious links, revealing personal information, or sending money. These scams thrive on building trust and exploiting emotions like excitement, fear, or urgency.</p>
+      
+      <!-- Content Section -->
+      <h3>Common Tactics in Social Media Scams</h3>
+      <ul>
+        <li><strong>Fake Giveaways:</strong> <em>Example:</em> “🎉 Congratulations! You’ve won an iPhone 15. Click the link to claim your prize.” 
+          (This links to a phishing site or malware download.)</li>
+        <li><strong>Romance Scams:</strong> <em>Example:</em> A scammer pretends to be a soldier overseas and builds trust before requesting money for a fake emergency.
+          (They exploit emotional connection and sympathy to commit fraud.)</li>
+        <li><strong>Investment Scams:</strong> <em>Example:</em> “Double your Bitcoin in 24 hours! Invest today with a verified crypto trader.” 
+          (Often promoted by fake or hijacked accounts to steal cryptocurrency.)</li>
+        <li><strong>Impersonation of Celebrities or Brands:</strong> <em>Example:</em> Fake Elon Musk accounts claim to be hosting crypto giveaways. 
+          (These often include fake websites or QR codes to steal funds.)</li>
+      </ul>
+      
+      <h3>How to Spot a Social Media Scam</h3>
+      <ul>
+        <li>Unexpected DMs or comments with links or prize announcements.</li>
+        <li>Accounts with few followers, suspicious usernames, or recent creation dates.</li>
+        <li>Emotional manipulation—scammers may act romantic, desperate, or overly generous.</li>
+        <li>Friends’ accounts that suddenly send unusual messages (they may be hacked).</li>
+        <li>Profiles asking to continue the conversation on WhatsApp, Telegram, or unknown platforms.</li>
+      </ul>
+      
+      <h3>Identity Privacy Concerns on Social Media</h3>
+      <ul>
+        <li><strong>Phishing Links in DMs or Posts:</strong> These often mimic legitimate login screens or prize forms.</li>
+        <li><strong>Profile Hijacking:</strong> Once compromised, your account may be used to scam others.</li>
+        <li><strong>Oversharing:</strong> Public posts with your full name, location, birthdate, or school can help scammers piece together your identity.</li>
+      </ul>
+      
+      <h3>How to Spot Social Media Scams</h3>
+      <!-- Figure 1 - Ray-Ban Scam Example -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/SocialMedia/SocialExample2.jpg') }}" alt="Ray-Ban giveaway scam example">
+        <figcaption>How to tell this is a social media scam: These Ray-Ban posts use a 90% discount as bait, tag users to spread reach, and link to suspicious websites. The duplicate messages and unofficial domains are red flags of a scam campaign.</figcaption>
+      </figure>
+      
+      <!-- Figure 2 - Fake Elon Musk Tweet -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/SocialMedia/SocialExample1.jpg') }}" alt="Fake Elon Musk Bitcoin giveaway tweet">
+        <figcaption>How to tell this is a scam post: This fake Elon Musk tweet promises a massive Bitcoin giveaway. Spelling errors, suspicious domains, and unrealistic rewards are clear warning signs.</figcaption>
+      </figure>
+      
+      <!-- Figure 3 - Elon Musk Facebook Message Scam -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/SocialMedia/SocialExample3.jpg') }}" alt="Facebook message scam claiming a prize from Elon Musk">
+        <figcaption>How to tell this is a scam message: Poor grammar, over-the-top promises ($50,000 and a Tesla), and vague sender identity reveal this as a classic social media scam.</figcaption>
+      </figure>
+      
+      <h3>Red Flags to Watch For</h3>
+      <ul>
+        <li>Giveaway or investment promises that sound too good to be true.</li>
+        <li>DMs with shortened or suspicious links.</li>
+        <li>Unusual behavior from friends’ accounts (they may have been hacked).</li>
+        <li>Emotional manipulation or love bombing from strangers.</li>
+        <li>Fake profiles with low activity or reused photos.</li>
+      </ul>
+      
+      <h3>If You Shared Personal Information</h3>
+      <ol>
+        <li><strong>Change your passwords immediately:</strong> Especially for your email, banking, and social media accounts.</li>
+        <li><strong>Enable Two-Factor Authentication (2FA):</strong> Strengthens account security even if your password is compromised.</li>
+        <li><strong>Review your privacy settings:</strong> Limit who can see your posts, contact info, and personal details.</li>
+        <li><strong>Warn your contacts:</strong> Let them know if your account may have been compromised.</li>
+        <li><strong>Report the scam:</strong> Notify the platform and consider filing a complaint with the FTC at <a href="https://www.ftc.gov/Complaint" target="_blank">ftc.gov/Complaint</a>.</li>
+      </ol>
+      
+      <!-- Mini Game Section -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a social media scam attempt or a legitimate communication.
+      </p>
+      <div id="mini-game">
+        <!-- Embedded Scam Spotter Quiz Game with two options -->
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('phishing')">Scam</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <h2>Works Cited</h2>
+        <small>
+        <ul>
+            <li>FBI Los Angeles Field Office. "FBI Los Angeles Field Office Warns of Romance Scams Ahead of Valentine’s Day." <em>Federal Bureau of Investigation</em>, 13 Feb. 2025, <a href="https://www.fbi.gov/contact-us/field-offices/losangeles/news/fbi-los-angeles-field-office-warns-of-romance-scams-ahead-of-valentines-day" target="_blank">www.fbi.gov</a>.</li>            
+            <li>Massachusetts Office of Consumer Affairs and Business Regulation. "Don't Fall for a Social Media Scam." <em>Mass.gov</em>, 23 Oct. 2024, <a href="https://www.mass.gov/news/dont-fall-for-a-social-media-scam" target="_blank">www.mass.gov</a>.</li>            
+            <li>Qahri-Saremi, Hamed, and Coauthor. "Situational Contingencies in Susceptibility of Social Media to Phishing: A Temptation and Restraint Model." <em>Colorado State University College of Business</em>, 2024, <a href="https://biz.source.colostate.edu/research-identifies-social-media-phishing-vulnerabilities/" target="_blank">biz.source.colostate.edu</a>.</li>            
+            <li>Subhash, Kale Santosh, et al. "The Rise of Social Media-Driven Stock Market Investment Scams: Analysing Financial Fraud in the Age of Social Media." <em>International Journal of Creative Research Thoughts (IJCRT)</em>, vol. 12, no. 11, Nov. 2024, pp. 112–115, <a href="https://www.ijcrt.org/papers/IJCRT2411574.pdf" target="_blank">www.ijcrt.org</a>.</li>            
+            <li>U.S. General Services Administration. "Social Media and Scams - Cybersecurity Tips." <em>CIO.gov</em>, 2024, <a href="https://www.cio.gov/assets/files/Social-Media-and-Scams.pdf" target="_blank">www.cio.gov</a>.</li>            
+            <li>Nature Editorial Team. "Friend or Phisher: How Known Senders and Fear of Missing Out Affect Young Adults’ Susceptibility to Phishing." <em>Nature Humanities and Social Sciences Communications</em>, vol. 8, no. 1, Sept. 2024, pp. 1–15, <a href="https://www.nature.com/articles/s41599-024-03412-8" target="_blank">www.nature.com</a>.</li>
+        </ul>
+        </small>
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    // Each quiz item includes an image, the correct answer ("scam" or "legitimate"),
+    // plus separate explanations for correct and incorrect responses.
+    const quizData = [
+      {
+        image: '/static/images/Phising/Mini_Game/example1.png',
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
+        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example2.png",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
+        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example3.png",
+        correct: "phishing",
+        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
+        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example4.png",
+        correct: "legitimate",
+        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
+        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example5.png",
+        correct: "legitimate",
+        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
+        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Load the current quiz item: display its image and reset feedback/buttons.
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      
+      // Re-enable answer buttons.
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    // Check the user's choice and display feedback accordingly.
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    // Advance to the next quiz item or show the final score.
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = `
+          <h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>
+        `;
+      }
+    }
+
+    // Initialize the quiz when the page loads.
+    loadQuestion();
+  </script>
+</body>
+</html>

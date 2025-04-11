@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job, Internship, and Scholarship Scams</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/base.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/nav.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/responsive.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/phishing.css') }}">
+  <style>
+    /* Styling for figure with caption */
+    figure.image-example {
+      max-width: 100%; /* Matches text container width */
+      margin: 20px 0;
+      padding: 10px;
+      border: 1px solid #ccc;
+      background-color: #f4f4f4;
+    }
+    figure.image-example img {
+      width: 70%;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+    figure.image-example figcaption {
+      margin-top: 10px;
+      font-size: 1.0rem;
+      text-align: center;
+      color: #555;
+    }
+
+    /* Works Cited Styling */
+    .works-cited {
+      text-align: center;
+      font-family: inherit;
+      font-size: 0.8rem;
+      margin-top: 30px;
+    }
+    .works-cited h3 {
+      margin-bottom: 10px;
+    }
+    .works-cited ul {
+      list-style-type: none;
+      padding: 0;
+    }
+    .works-cited li {
+      margin-bottom: 5px;
+    }
+
+    /* Scam Spotter Quiz Styling */
+    #quiz-container {
+      max-width: 600px;
+      margin: 30px auto;
+      padding: 20px;
+      border: 2px solid #ccc;
+      border-radius: 8px;
+      background-color:rgb(0, 0, 0);
+      font-family: sans-serif;
+      text-align: center;
+    }
+    #quiz-container h1 {
+      margin-bottom: 10px;
+    }
+    #quiz-container p.instructions {
+      margin-bottom: 20px;
+      color: #555;
+    }
+    #image-container {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    #image-container img {
+      max-width: 100%;
+      height: auto;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    /* Buttons for the two-choice quiz */
+    #buttons {
+      margin: 20px 0;
+    }
+    .quiz-btn {
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      background-color: #f0f0f0;
+      transition: background-color 0.2s ease;
+    }
+    .quiz-btn:hover {
+      background-color: #e0e0e0;
+    }
+    #feedback {
+      margin: 20px 0;
+      font-size: 1.2rem;
+      padding: 10px;
+      border-radius: 5px;
+      display: none; /* hidden initially */
+    }
+    /* Correct and incorrect feedback styling */
+    #feedback.correct {
+      background-color: #c8e6c9;
+      color: #256029;
+    }
+    #feedback.incorrect {
+      background-color: #ffcdd2;
+      color: #b71c1c;
+    }
+    #next-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      display: none; /* hidden until an answer is given */
+      background-color: #007bff;
+      color: #fff;
+    }
+    #next-button:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-left">
+      <a href="{{ url_for('home') }}">Scam Prevention</a>
+    </div>
+    <div class="nav-right">
+      <a href="{{ url_for('learn_scams') }}">Learn Scams</a>
+      <a href="{{ url_for('resources') }}">Resources</a>
+      <a href="{{ url_for('about') }}">About</a>
+    </div>
+  </nav>
+
+  <main>
+    <!-- Hero Section with Title Overlay -->
+    <section class="hero-section">
+      <img src="{{ url_for('static', filename='images/Employment.jpg') }}" alt="Employment Scam" class="hero-image">
+      <div class="hero-text">
+        <h1>Job, Internship, and Scholarship Scams</h1>
+      </div>
+    </section>
+    
+    <!-- Main Scrollable Content -->
+    <section class="phishing-content">
+      <!-- Introduction & Overview -->
+      <p><strong>Understanding the Threat:</strong> 
+        Scammers target students, recent graduates, and job seekers by posing as legitimate employers, recruiters, or scholarship committees. These scams are often delivered via email, job boards, social media platforms like LinkedIn or Instagram, or even through campus mailing lists. Victims may be promised high-paying remote roles, internship opportunities, or financial awards—only to be tricked into sending personal data, paying upfront fees, or unknowingly laundering money.</p>
+      
+      <!-- Employment and Awards Scams -->
+      <h3>Common Tactics in Job, Internship, and Scholarship Scams</h3>
+      <ul>
+        <li><strong>Too-Good-to-Be-True Job Offers:</strong> <em>Example:</em> “We’d love to offer you a fully remote job paying $1,200 a week. No interview needed!” (Scammers often promote jobs with high pay, minimal effort, and instant hiring to lure victims.)</li>
+        <li><strong>Fake Scholarship or Membership Invitations:</strong> <em>Example:</em> “You’ve been selected for the Honor Society! Just pay a $75 activation fee to access your benefits.” (These scams ask for fees before awarding anything and use flattery or urgency to pressure victims.)</li>
+        <li><strong>Phishing Links in Application Emails:</strong> <em>Example:</em> A recruiter on LinkedIn asks you to click a shortened link to view a “confidential proposal.” (These links often lead to phishing sites or malware.)</li>
+        <li><strong>Externship Confirmation Scams:</strong> <em>Example:</em> “You’ve been accepted to our externship program! Click here to confirm within 48 hours or the offer will be revoked.” (Scammers use fake urgency and prohibit contacting the real company to avoid being exposed.)</li>
+        <li><strong>Check Deposit Scams:</strong> <em>Example:</em> “As part of your job, deposit this check and wire part of the money to a vendor.” (The check bounces, leaving you responsible for the money sent.)</li>
+      </ul>
+      
+      <h3>How to Spot a Job, Internship, or Scholarship Scam</h3>
+      <ul>
+        <li>Offers that appear without applying or interviewing.</li>
+        <li>Requests for payment or processing fees before receiving anything.</li>
+        <li>Communications that use urgency: “respond now,” “last chance,” “limited slots.”</li>
+        <li>Unprofessional email addresses (e.g., @gmail.com) instead of official domains.</li>
+        <li>Recruiters who avoid video calls or won’t share verifiable company information.</li>
+        <li>Links that redirect to unfamiliar or suspicious-looking websites.</li>
+        <li>Messages discouraging you from contacting the company directly.</li>
+      </ul>
+      
+      <!-- Figures for Scam Examples -->
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Employment/Employ1.jpg') }}" alt="LinkedIn confidential project scam">
+        <figcaption>How to tell this is a scam: The sender uses vague language like “confidential project” and urges you to click a shortened link. There is no interview process, no job title, and the message contains awkward grammar.</figcaption>
+      </figure>
+      
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Employment/Employ2.jpg') }}" alt="Honor Society membership scam">
+        <figcaption>How to tell this is a scam: This message flatters you with phrases like “you’ve been selected” and creates pressure to pay a membership fee. Legitimate honors and scholarships rarely ask for payment upfront.</figcaption>
+      </figure>
+      
+      <figure class="image-example">
+        <img src="{{ url_for('static', filename='images/Employment/Employ3.jpg') }}" alt="Externship email scam with threats">
+        <figcaption>How to tell this is a scam: This email pressures you to respond within 48 hours and explicitly tells you not to contact the host company—a major red flag. Real programs do not threaten revocation for basic questions.</figcaption>
+      </figure>
+      
+      <h3>Red Flags to Watch For</h3>
+      <ul>
+        <li>Unsolicited emails or DMs offering jobs, scholarships, or honors.</li>
+        <li>Offers that require you to pay to receive benefits.</li>
+        <li>Links to Google Forms, shortened URLs, or fake application portals.</li>
+        <li>Messages with grammatical errors, vague job descriptions, or sketchy logos.</li>
+        <li>Recruiters who avoid phone or video calls and rush the process.</li>
+        <li>Instructions to keep the job confidential or avoid contacting the organization.</li>
+      </ul>
+      
+      <h3>If You Fell for a Job or Scholarship Scam</h3>
+      <ol>
+        <li><strong>Stop all communication with the scammer.</strong></li>
+        <li><strong>Report the scam</strong> to your school, the FTC at <a href="https://www.ftc.gov/Complaint" target="_blank">ftc.gov/Complaint</a>, and the platform it appeared on (LinkedIn, Instagram, email provider).</li>
+        <li><strong>Contact your bank</strong> if you sent money or deposited a fraudulent check.</li>
+        <li><strong>Change your passwords</strong> for email, LinkedIn, or any other accounts you gave access to.</li>
+        <li><strong>Place a fraud alert or credit freeze</strong> if you shared sensitive information like your SSN.</li>
+        <li><strong>Warn others:</strong> Tell your classmates, coworkers, or campus job board to prevent further victims.</li>
+      </ol>
+
+      <!-- Mini Game Section -->
+      <h2>Mini Game: Scam Spotter Quiz</h2>
+      <p>
+        Examine the image below, then choose whether it’s a job, scholarship, or internship scam attempt or a legitimate communication.
+      </p>
+      <div id="mini-game">
+        <!-- Embedded Scam Spotter Quiz Game with two options -->
+        <div id="quiz-container">
+          <h1>Scam Spotter Quiz</h1>
+          <div id="image-container"></div>
+          <div id="buttons">
+            <button class="quiz-btn" onclick="checkAnswer('scam')">Scam</button>
+            <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
+          </div>
+          <div id="feedback"></div>
+          <button id="next-button" onclick="nextQuestion()">Next</button>
+        </div>
+      </div>
+      
+      <!-- Works Cited -->
+      <small>
+        <h2>Works Cited</h2>
+          <ul>
+            <li>Costello College of Business. “Fraudulent Internships and Job Posts.” <em>George Mason University</em>, Aug. 2023, <a href="https://business.gmu.edu/news/2023-08/fraudulent-internships-and-job-posts" target="_blank">business.gmu.edu</a>.</li>
+            <li>Federal Trade Commission. “How To Avoid Scholarship and Financial Aid Scams.” <em>Consumer FTC</em>, <a href="https://consumer.ftc.gov/articles/how-avoid-scholarship-and-financial-aid-scams" target="_blank">consumer.ftc.gov</a>.</li>
+            <li>Binghamton University. “Employment Scam Information.” <em>Fleishman Center for Career and Professional Development</em>, <a href="https://careertools.binghamton.edu/resources/employment-scam-information/" target="_blank">careertools.binghamton.edu</a>.</li>
+            <li>Tisch Office of Career Development. “Avoiding Job Scams.” <em>New York University</em>, 11 Mar. 2025, <a href="https://tisch.nyu.edu/student-affairs/career-development/career-development/job-scam-avoidance-tips.html" target="_blank">tisch.nyu.edu</a>.</li>
+            <li>Trinity College. “Advisory: Unexpected Student Job Offer Scams.” <em>Trinity College of Hartford</em>, 5 Jan. 2025, <a href="https://www.trincoll.edu/lits/technology/security/it-security-awareness-education/information-security-advisories/unexpected-student-job-offers-are-often-scams/" target="_blank">trincoll.edu</a>.</li>
+            <li>Cornell Career Services. “Beware of Job/Internship Scams.” <em>Cornell University</em>, <a href="https://career.cornell.edu/resources/beware-of-job-internship-scams/" target="_blank">career.cornell.edu</a>.</li>
+            <li>Baruch College. “Avoiding Job Scams.” <em>CUNY</em>, <a href="https://studentaffairs.baruch.cuny.edu/starr-career-development-center/welcome-students/avoiding-job-scams/" target="_blank">baruch.cuny.edu</a>.</li>
+            <li>Columbia University Center for Career Education. “Identifying Fraudulent Job & Internship Postings.” <em>Columbia University</em>, <a href="https://www.careereducation.columbia.edu/resources/identifying-fraudulent-job-internship-postings" target="_blank">careereducation.columbia.edu</a>.</li>
+          </ul>
+      </small>
+    </section>
+  </main>
+      
+  <script>
+    // Quiz data with 5 examples.
+    // Each quiz item includes an image, the correct answer ("scam" or "legitimate"),
+    // plus separate explanations for correct and incorrect responses.
+    const quizData = [
+      {
+        image: '/static/images/Phising/Mini_Game/example1.png',
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
+        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example2.png",
+        correct: "phishing",
+        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
+        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example3.png",
+        correct: "phishing",
+        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
+        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example4.png",
+        correct: "legitimate",
+        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
+        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+      },
+      {
+        image: "/static/images/Phising/Mini_Game/example5.png",
+        correct: "legitimate",
+        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
+        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+      }
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+
+    // Load the current quiz item: display its image and reset feedback/buttons.
+    function loadQuestion() {
+      document.getElementById("feedback").style.display = "none";
+      document.getElementById("next-button").style.display = "none";
+      
+      // Re-enable answer buttons.
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = false);
+      
+      const imageContainer = document.getElementById("image-container");
+      imageContainer.innerHTML = `<img src="${quizData[currentQuestion].image}" alt="Quiz Image">`;
+    }
+
+    // Check the user's choice and display feedback accordingly.
+    function checkAnswer(answer) {
+      const feedback = document.getElementById("feedback");
+      const buttons = document.querySelectorAll(".quiz-btn");
+      buttons.forEach(btn => btn.disabled = true);
+      
+      if (answer === quizData[currentQuestion].correct) {
+        feedback.className = "correct";
+        feedback.innerText = "Correct! " + quizData[currentQuestion].explanationCorrect;
+        score++;
+      } else {
+        feedback.className = "incorrect";
+        feedback.innerText = "Incorrect. " + quizData[currentQuestion].explanationIncorrect;
+      }
+      
+      feedback.style.display = "block";
+      document.getElementById("next-button").style.display = "block";
+    }
+
+    // Advance to the next quiz item or show the final score.
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < quizData.length) {
+        loadQuestion();
+      } else {
+        document.getElementById("quiz-container").innerHTML = `
+          <h1>Quiz Completed</h1>
+          <p>Your Score: ${score} out of ${quizData.length}</p>
+          <p>Thank you for playing!</p>
+        `;
+      }
+    }
+
+    // Initialize the quiz when the page loads.
+    loadQuestion();
+  </script>
+</body>
+</html>
