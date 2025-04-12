@@ -243,38 +243,38 @@
       
   <script>
     // Quiz data with 5 examples.
-    // Each quiz item includes an image, the correct answer ("phishing" or "legitimate"),
+    // Each quiz item includes an image, the correct answer ("scam" or "legitimate"),
     // plus separate explanations for correct and incorrect responses.
     const quizData = [
       {
-        image: '/static/images/Phising/Mini_Game/example1.png',
-        correct: "phishing",
-        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
-        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example2.png",
-        correct: "phishing",
-        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
-        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example3.png",
-        correct: "phishing",
-        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
-        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example4.png",
+        image: '/static/images/TechSupport/Mini_Game/TechQuiz1.jpg',
         correct: "legitimate",
-        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
-        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+        explanationCorrect: "This is a legitimate two-factor authentication email from McAfee. The sender domain ends in .mcafee.com, which McAfee confirms as valid. McAfee uses different email addresses for different types of communication, and all official addresses end in .mcafee.com — except for a few exceptions they list on their support site.",
+        explanationIncorrect: "Even though it contains a code, the sender and formatting align with McAfee's legitimate practices. There's no suspicious link or unusual request for personal info."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example5.png",
+        image: "/static/images/TechSupport/Mini_Game/TechQuiz2.jpg",
         correct: "legitimate",
-        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
-        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+        explanationCorrect: "This is a real Apple Support chat. The verified badge, structured interaction, and reference to a known Apple product indicate authenticity. Apple uses automated assistants to help route support queries, especially through the Messages app.",
+        explanationIncorrect: "Even if it seems automated, the verified Apple contact, product recognition, and professional tone confirm it's legitimate — not a scam or phishing attempt."
+      },
+      {
+        image: "/static/images/TechSupport/Mini_Game/TechQuiz3.jpg",
+        correct: "scam",
+        explanationCorrect: "You must have noticed the fake error code and urgent push to call a toll-free number. This is a classic tech support scam that tricks users into calling fake “Apple Support” numbers.",
+        explanationIncorrect: "Legitimate Apple alerts never instruct you to call numbers for help. This popup uses fear and urgency — key red flags of a scam."
+      },
+      {
+        image: "/static/images/TechSupport/Mini_Game/TechQuiz4.jpg",
+        correct: "scam",
+        explanationCorrect: "You must have spotted the fake website and push to download software from a sketchy link. These popups pretend to help but can actually install malware.",
+        explanationIncorrect: "Even though it looks like a helpful warning, real antivirus tools don’t appear in-browser this way or push urgent downloads like this."
+      },
+      {
+        image: "/static/images/TechSupport/Mini_Game/TechQuiz5.jpg",
+        correct: "scam",
+        explanationCorrect: "You must have noticed the fake Netflix URL and the demand to call a phone number. Real Netflix messages don’t redirect users to suspicious domains or request calls to resolve account issues.",
+        explanationIncorrect: "Even if it looks branded, the domain name (afta3.com) gives it away as a scam. Always check URLs carefully — this is a phishing site."
       }
     ];
 

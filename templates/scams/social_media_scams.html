@@ -229,7 +229,7 @@
           <h1>Scam Spotter Quiz</h1>
           <div id="image-container"></div>
           <div id="buttons">
-            <button class="quiz-btn" onclick="checkAnswer('phishing')">Scam</button>
+            <button class="quiz-btn" onclick="checkAnswer('scam')">Scam</button>
             <button class="quiz-btn" onclick="checkAnswer('legitimate')">Legitimate</button>
           </div>
           <div id="feedback"></div>
@@ -258,34 +258,34 @@
     // plus separate explanations for correct and incorrect responses.
     const quizData = [
       {
-        image: '/static/images/Phising/Mini_Game/example1.png',
-        correct: "phishing",
-        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
-        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+        image: '/static/images/SocialMedia/Mini_Game/SocialQuiz1.jpg',
+        correct: "scam",
+        explanationCorrect: "You must have noticed repeated posts about high-demand Taylor Swift tickets from a personal account. Scammers often use fake identities and vague language to lure buyers into sending money without receiving real tickets.",
+        explanationIncorrect: "Even if they claim to have “proof,” legitimate sellers use verified platforms for reselling concert tickets — not public Facebook posts from unknown individuals."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example2.png",
-        correct: "phishing",
-        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
-        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
+        image: "/static/images/SocialMedia/Mini_Game/SocialQuiz2.jpg",
+        correct: "scam",
+        explanationCorrect: "You must have spotted the absurd claim — a “not-dead” Michael Jackson asking for $600 via Cash App. Scammers often impersonate celebrities or use outrageous stories to exploit curiosity or humor.",
+        explanationIncorrect: "Even in joke-like form, this is a scam. No real person — let alone a celebrity — would privately message for money with such a story."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example3.png",
-        correct: "phishing",
-        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
-        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example4.png",
+        image: "/static/images/SocialMedia/Mini_Game/SocialQuiz3.jpg",
         correct: "legitimate",
-        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
-        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+        explanationCorrect: "This is a legitimate giveaway from a verified account. It doesn't ask for money or personal info and stays on-brand. Verified badges and professional language support authenticity.",
+        explanationIncorrect: "Though it’s a giveaway, there are no red flags like sketchy links or too-good-to-be-true rewards. Verified profiles with consistent branding are more trustworthy."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example5.png",
+        image: "/static/images/SocialMedia/Mini_Game/SocialQuiz4.jpg",
+        correct: "scam",
+        explanationCorrect: "You must have noticed the poor grammar, random prize claim, and the request to interact with posts. Scammers often bait users with fake iPhone giveaways and inflated excitement to boost their fake pages.",
+        explanationIncorrect: "Real companies don’t message winners directly or require post interactions to claim expensive prizes. This is a clear scam tactic."
+      },
+      {
+        image: "/static/images/SocialMedia/Mini_Game/SocialQuiz5.jpg",
         correct: "legitimate",
-        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key.",
-        explanationIncorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, you should also consider unphishable options such as Passkeys or using a phone as a security key."
+        explanationCorrect: "This is a real giveaway from the verified Too Faced account. The branding, language, and prize details are consistent with a professional campaign.",
+        explanationIncorrect: "While social giveaways should be approached with caution, this one is hosted by a well-known, verified brand and contains no suspicious requests."
       }
     ];
 
