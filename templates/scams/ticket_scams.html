@@ -139,7 +139,7 @@
   <main>
     <!-- Hero Section with Title Overlay -->
     <section class="hero-section">
-      <img src="{{ url_for('static', filename='images/ticket_scams/hero.jpg') }}" alt="Ticket Scams" class="hero-image">
+      <img src="{{ url_for('static', filename='images/Ticket.png') }}" alt="Ticket Scams" class="hero-image">
       <div class="hero-text">
         <h1>Ticket Scams</h1>
       </div>
@@ -252,34 +252,34 @@
     // Quiz data with 5 examples.
     const quizData = [
       {
-        image: '/static/images/Phising/Mini_Game/example1.png',
+        image: '/static/images/TicketSales/Mini_Games/TicketQuiz1.jpeg',
         correct: "phishing",
-        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites.",
-        explanationIncorrect: "The URL appears correct but is a look-alike; always double-check before clicking."
+        explanationCorrect: "This message is likely phishing or a scam attempt. It comes from an unknown number and offers tickets at a popular venue—common tactics to lure people into sending money or personal information. Always be wary of unsolicited offers from unknown contacts. It’s best to buy event tickets from reputable, official sources.",
+        explanationIncorrect: "This message is likely a scam or phishing attempt. An unsolicited text from an unknown number promising event tickets is a red flag. Scammers often prey on fans eager for tickets, so always verify the seller or stick to official websites."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example2.png",
+        image: "/static/images/TicketSales/Mini_Games/TicketQuiz2.jpeg",
         correct: "phishing",
-        explanationCorrect: "You identified the mismatched domains and an implausible offer—clear indicators of a scam.",
-        explanationIncorrect: "The evidence suggests a scam based on inconsistent domain names and unrealistic offers."
+        explanationCorrect: "When someone unsolicited offers tickets in a comment thread—especially for high-demand events—be suspicious. Scammers often look for people desperate for tickets and try to swindle them out of money. Always buy from reputable ticket vendors or trusted resellers.",
+        explanationIncorrect: "A random person offering ‘need tickets??’ in a comment thread is a big red flag. Always be cautious of unsolicited offers for high-demand tickets and verify the seller’s credentials before sending any money."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example3.png",
+        image: "/static/images/TicketSales/Mini_Games/TicketQuiz3.jpeg",
         correct: "phishing",
-        explanationCorrect: "The urgency tactics used here signal a phishing scam.",
-        explanationIncorrect: "Urgency is a red flag; this tactic is commonly used by scammers."
+        explanationCorrect: "This message is highly suspicious and most likely a scam. The sender is an unknown contact, offering sought-after tickets for a popular artist—common tactics to lure victims into sending money. Always buy from trusted or official ticket sources, especially for high-demand concerts.",
+        explanationIncorrect: "Unsolicited ticket offers in group chats, especially from new or unknown numbers, are a major red flag. Whenever you see a random ticket offer for a popular show, check official sources or fan club channels first."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example4.png",
+        image: "/static/images/TicketSales/Mini_Games/TicketQuiz4.jpeg",
+        correct: "phishing",
+        explanationCorrect: "This is likely a ticket scam. The account has low followers, minimal profile info, and is suddenly offering high-demand presale tickets. Scammers often create or repurpose accounts to trick buyers into sending money without providing real tickets. Always verify sellers and consider using official ticket platforms or known reseller sites.",
+        explanationIncorrect: "An unverified account with few followers, offering presale tickets for a popular show, is a common scam tactic. Always confirm the authenticity of tickets and the reputation of the seller before making any purchase."
+      },
+      {
+        image: "/static/images/TicketSales/Mini_Games/TicketQuiz5.png",
         correct: "legitimate",
-        explanationCorrect: "The secure URL and verified details confirm this is a legitimate listing.",
-        explanationIncorrect: "The indicators show authenticity; this listing appears genuine."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example5.png",
-        correct: "legitimate",
-        explanationCorrect: "The ticket details and seat information match the venue’s official data.",
-        explanationIncorrect: "The consistency with official venue information indicates this listing is authentic."
+        explanationCorrect: "This page is legitimate. The domain and layout match Ticketmaster’s standard interface. You can safely purchase tickets here, but still remember to confirm you’re on the official URL (ticketmaster.com) and not a look-alike domain.",
+        explanationIncorrect: "This page is actually not phishing—it’s the authentic Ticketmaster website. When buying tickets online, always confirm the domain (ticketmaster.com) and the padlock symbol (HTTPS). Ticketmaster is a reputable platform with secure payment processes."
       }
     ];
 

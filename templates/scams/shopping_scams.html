@@ -189,17 +189,13 @@
       <h3>Instagram Shopping Scams</h3>
       <p><strong>Description:</strong> On Instagram, scammers establish fake storefronts using posts, stories, and direct messages. They often use stolen or counterfeit images and engage in influencer-like tactics to build quick trust. Fraudsters may also use “limited time” offers to pressure users into making immediate purchases.
       <br><br><em>Detection Tips:</em> Look for verified badges on accounts, check for a robust posting history, and verify that seller profiles have consistent branding. Be skeptical of links that lead to external websites, and always research the seller before proceeding with any purchase.</p>
-      <figure class="image-example">
-        <img src="{{ url_for('static', filename='images/ecommerce/Online4.jpg') }}" alt="Instagram scam example">
-        <figcaption>Example: An enticing Instagram post that redirects users to a fraudulent online store.</figcaption>
-      </figure>
       
       <!-- Depop & Poshmark Scams -->
       <h3>Depop &amp; Poshmark Scams</h3>
       <p><strong>Description:</strong> In fashion resale marketplaces like Depop and Poshmark, scammers often list designer or vintage clothing at incredibly low prices. Fraudsters may use stolen images or altered descriptions, and sometimes pressure buyers to complete transactions outside the platform—where buyer protection is lost.
       <br><br><em>Detection Tips:</em> Always check the seller’s reviews and transaction history. Be cautious of listings with prices that seem too good to be true. Insist on using the platform’s secure payment system, and verify return or refund policies before purchasing.</p>
       <figure class="image-example">
-        <img src="{{ url_for('static', filename='images/ecommerce/Online5.jpg') }}" alt="Depop/Poshmark scam example">
+        <img src="{{ url_for('static', filename='images/ecommerce/Online4.jpg') }}" alt="Depop/Poshmark scam example">
         <figcaption>Example: A fraudulent listing on Depop or Poshmark using images lifted from legitimate sellers.</figcaption>
       </figure>
       
@@ -265,34 +261,34 @@
     // Quiz data with 5 examples.
     const quizData = [
       {
-        image: '/static/images/Phising/Mini_Game/example1.png',
+        image: '/static/images/Ecommerce/Mini_Game/EcomQuiz1.png',
         correct: "phishing",
-        explanationCorrect: "You must have spotted the look-alike URL. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information.",
-        explanationIncorrect: "The URL looks correct but is actually a look-alike. Be cautious about hyperlinks and attachments you open from emails — they may direct you to fraudulent websites where you're asked to input sensitive information."
+        explanationCorrect: "The copy used on the fake Vivobarefoot site is suspiciously colloquial, and the grammar is incorrect—as seen with the black promotional banner, and so-called “Returns Policy” (left). The site’s dropdown menu also features the word “Sandals” twice, further bringing its legitimacy into question (right).",
+        explanationIncorrect: "The copy used on the fake Vivobarefoot site is suspiciously colloquial, and the grammar is incorrect—as seen with the black promotional banner, and so-called “Returns Policy” (left). The site’s dropdown menu also features the word “Sandals” twice, further bringing its legitimacy into question (right)."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example2.png",
-        correct: "phishing",
-        explanationCorrect: "You must have spotted the mismatched domains and truly unbelievable offer.",
-        explanationIncorrect: "This scam had mismatched domains, clever redirects, and a truly unbelievable offer."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example3.png",
-        correct: "phishing",
-        explanationCorrect: "You must have noticed the scammers’ use of urgency to hide their use of the 'note from seller' and other invoice fields.",
-        explanationIncorrect: "The phishers hid their scam behind PayPal’s legitimate invoicing function to build trust."
-      },
-      {
-        image: "/static/images/Phising/Mini_Game/example4.png",
+        image: "/static/images/Ecommerce/Mini_Game/EcomQuiz2.png",
         correct: "legitimate",
-        explanationCorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'",
-        explanationIncorrect: "This is a legitimate Dropbox communication. The sender is 'dropboxmail.com,' which is unusual but legitimate, and the URL is a secure link (https) to 'dropbox.com.'"
+        explanationCorrect: "This is an actual PayPal login page. Confirming the domain (paypal.com) and checking for an SSL certificate (the padlock icon) are good ways to make sure you’re on the official site.",
+        explanationIncorrect: "This page is not phishing; it’s a legitimate PayPal login. In a real situation, always check the URL carefully. If it’s spelled exactly ‘paypal.com’ and protected with a valid certificate (usually shown by a lock icon in the address bar), that’s typically a good sign it’s genuine."
       },
       {
-        image: "/static/images/Phising/Mini_Game/example5.png",
+        image: "/static/images/Ecommerce/Mini_Game/EcomQuiz3.png",
+        correct: "phishing",
+        explanationCorrect: "Notice the suspicious domain name (nutoshoping.com), which doesn’t match the brand it supposedly represents. The page also tries to create a sense of urgency with a countdown timer and promises exclusive rewards—common phishing tactics. Always double-check a site’s domain, and be wary of overly generous offers or scare tactics.",
+        explanationIncorrect: "The domain name is suspicious, and it’s offering ‘rewards’ in exchange for personal or payment information. The deadline countdown is designed to pressure you. Always be wary of sites that make overly attractive offers or show mismatched domain names."
+      },
+      {
+        image: "/static/images/Ecommerce/Mini_Game/EcomQuiz4.png",
+        correct: "phishing",
+        explanationCorrect: "The suspicious factors include the shortened link (bit.ly), which may redirect to a malicious website. The account name uoozee_official could be impersonating a real brand or influencer, and this post might prompt you to enter personal or payment information on a phony site. Always be careful when following links from unfamiliar or unverified accounts.",
+        explanationIncorrect: "This is phishing! The suspicious username, the generic ‘new arrival’ text, and a shortened link leading to an unknown site all suggest a scam. Be cautious clicking links on unfamiliar Instagram profiles or brands."
+      },
+      {
+        image: "/static/images/Ecommerce/Mini_Game/EcomQuiz5.png",
         correct: "legitimate",
-        explanationCorrect: "Never share a 2-Step code outside of a real-time verification process you initiated, such as a website login or while on the phone with your bank. When possible, consider unphishable options like Passkeys.",
-        explanationIncorrect: "Never share a 2-Step code outside of a verification process you initiated, such as during a website login or a phone call with your bank. Consider secure alternatives like Passkeys."
+        explanationCorrect: "This is a legitimate Instagram profile for a well-known charity (Children’s Cancer Research Fund). Clues that it’s authentic include its official handle, consistent branding, a recognized website (linktr.ee/childrenscancer), and an established track record in the community.",
+        explanationIncorrect: "This Instagram profile is actually not phishing. It belongs to a recognized charitable organization, verified by external sources. In a real situation, you can look for an official website, verified badge, and an established online presence to confirm legitimacy."
       }
     ];
 
