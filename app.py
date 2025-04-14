@@ -14,10 +14,6 @@ def learn_scams():
 def resources():
     return render_template('resources.html')
 
-@app.route('/about')
-def about():
-    return render_template('about.html')
-
 @app.route('/scams/phishing_scams')
 def phishing_scams():
     return render_template('scams/phishing_scams.html')
